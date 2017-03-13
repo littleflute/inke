@@ -241,7 +241,7 @@ div#header_index  a:link, div#header_index  a:visited
 		display: block;	
 		width: 1100px;
 		height: 90px;
-		background : transparent url(/ui/head_index.gif) top left no-repeat;
+		background : transparent url(ui/head_index.gif) top left no-repeat;
 		margin: 0;
 		padding: 0;
 		border: 0;
@@ -249,7 +249,7 @@ div#header_index  a:link, div#header_index  a:visited
 
 div#header_index  a:hover
 		{
-		background : transparent url(/ui/head_index.gif) 0 -90px no-repeat;
+		background : transparent url(ui/head_index.gif) 0 -90px no-repeat;
 		}
 
 
