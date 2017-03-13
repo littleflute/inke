@@ -123,7 +123,7 @@ body
 		margin: 0;
 		padding: 0;
 		border: 0;
-		background: #f9f9f9 url(/ui/holder.gif) top center repeat-y;
+		background: #f9f9f9 url(ui/holder.gif) top center repeat-y;
 		}
 
 div#wrapper
@@ -133,7 +133,7 @@ div#wrapper
 		border: 0;
 		width: 1129px;
 		text-align: left;
-		background: transparent url(/ui/wrapper.gif) top left repeat-y;
+		background: transparent url(ui/wrapper.gif) top left repeat-y;
 		}
 
 div#navsecond
@@ -217,7 +217,7 @@ div#header  a:link, div#header  a:visited
 		display: block;	
 		width: 372px;
 		height: 90px;
-		background : transparent url(/ui/bg.gif) 0 -120px no-repeat;
+		background : transparent url(ui/bg.gif) 0 -120px no-repeat;
 		margin: 0;
 		padding: 0;
 		border: 0;
@@ -225,7 +225,7 @@ div#header  a:link, div#header  a:visited
 
 div#header  a:hover
 		{
-		background: transparent url(/ui/bg.gif) 0 -210px no-repeat;
+		background: transparent url(ui/bg.gif) 0 -210px no-repeat;
 		}
 
 div#header	div#ad_head
@@ -321,7 +321,7 @@ div#navfirst ul#menu
 		{
 		height: 55px;
 		width: 1100px;
-		background: transparent url(/ui/bg.gif) top left no-repeat;
+		background: transparent url(ui/bg.gif) top left no-repeat;
 		margin: 0;
 		padding: 0;
 		position: relative;
@@ -357,25 +357,25 @@ div#navfirst ul#menu li a
 #m	{left:738px;width:185px;}
 #w	{left:923px;width:177px;}
 
-#h a:hover	{background: transparent url(/ui/bg.gif) 0 -55px no-repeat;}
-#b a:hover	{background: transparent url(/ui/bg.gif) -155px -55px no-repeat;}
-#s a:hover	{background: transparent url(/ui/bg.gif) -312px -55px no-repeat;}
-#d a:hover	{background: transparent url(/ui/bg.gif) -479px -55px no-repeat;}
-#x a:hover	{background: transparent url(/ui/bg.gif) -637px -55px no-repeat;}
-#m a:hover	{background: transparent url(/ui/bg.gif) -738px -55px no-repeat;}
-#w a:hover	{background: transparent url(/ui/bg.gif) -923px -55px no-repeat;}
+#h a:hover	{background: transparent url(ui/bg.gif) 0 -55px no-repeat;}
+#b a:hover	{background: transparent url(ui/bg.gif) -155px -55px no-repeat;}
+#s a:hover	{background: transparent url(ui/bg.gif) -312px -55px no-repeat;}
+#d a:hover	{background: transparent url(ui/bg.gif) -479px -55px no-repeat;}
+#x a:hover	{background: transparent url(ui/bg.gif) -637px -55px no-repeat;}
+#m a:hover	{background: transparent url(ui/bg.gif) -738px -55px no-repeat;}
+#w a:hover	{background: transparent url(ui/bg.gif) -923px -55px no-repeat;}
 
-body.html #h {background: transparent url(/ui/bg.gif) 0 -55px no-repeat;}
-body.browserscripting #b {background: transparent url(/ui/bg.gif) -155px -55px no-repeat;}
-body.serverscripting #s {background: transparent url(/ui/bg.gif) -312px -55px no-repeat;}
-body.dotnet #d {background: transparent url(/ui/bg.gif) -479px -55px no-repeat;}
-body.xml #x {background: transparent url(/ui/bg.gif) -637px -55px no-repeat;}
-body.multimedia #m {background: transparent url(/ui/bg.gif) -738px -55px no-repeat;}
-body.webbuilding #w {background: transparent url(/ui/bg.gif) -923px -55px no-repeat;}
+body.html #h {background: transparent url(ui/bg.gif) 0 -55px no-repeat;}
+body.browserscripting #b {background: transparent url(ui/bg.gif) -155px -55px no-repeat;}
+body.serverscripting #s {background: transparent url(ui/bg.gif) -312px -55px no-repeat;}
+body.dotnet #d {background: transparent url(ui/bg.gif) -479px -55px no-repeat;}
+body.xml #x {background: transparent url(ui/bg.gif) -637px -55px no-repeat;}
+body.multimedia #m {background: transparent url(ui/bg.gif) -738px -55px no-repeat;}
+body.webbuilding #w {background: transparent url(ui/bg.gif) -923px -55px no-repeat;}
 
 #ws	{left:738px;width:185px;}
-#ws a:hover	{background: transparent url(/ui/bg.gif) -738px -55px no-repeat;}
-body.webservices #ws {background: transparent url(/ui/bg.gif) -738px -55px no-repeat;}
+#ws a:hover	{background: transparent url(ui/bg.gif) -738px -55px no-repeat;}
+body.webservices #ws {background: transparent url(ui/bg.gif) -738px -55px no-repeat;}
 
 
 
@@ -923,7 +923,7 @@ div#tpn, div#bpn	{
 div#tpn ul.prenext, div#bpn ul.prenext	{
 	height:29px;
 	width:230px;
-	background: transparent url(/ui/bg.gif) 0 -570px no-repeat;
+	background: transparent url(ui/bg.gif) 0 -570px no-repeat;
 	margin:0;
 	padding:0;
 	border:0;
@@ -952,8 +952,8 @@ div#tpn ul.prenext a, div#bpn ul.prenext a	{
 .pre	{left:0; width:105px;}
 .next	{left:125px; width:105px;}
 
-.pre a:hover	{background: transparent url(/ui/bg.gif) 0px -619px no-repeat;}
-.next a:hover	{background: transparent url(/ui/bg.gif) -125px -619px no-repeat;}
+.pre a:hover	{background: transparent url(ui/bg.gif) 0px -619px no-repeat;}
+.next a:hover	{background: transparent url(ui/bg.gif) -125px -619px no-repeat;}
 
 
 
@@ -961,17 +961,17 @@ div#tpn ul.prenext a, div#bpn ul.prenext a	{
 
 	/* ----------------------------------- navsecond ----------------------------------- */
 div#course {
-	background:transparent url(/ui/bg.gif) 0 -690px no-repeat;
+	background:transparent url(ui/bg.gif) 0 -690px no-repeat;
 	padding:45px 0 10px 0;
 	}
 
 div#afterschool {
-	background:transparent url(/ui/bg.gif) -362px -690px no-repeat;
+	background:transparent url(ui/bg.gif) -362px -690px no-repeat;
 	padding:45px 0 10px 0;
 	}
 
 div#selected {
-	background:transparent url(/ui/bg.gif) -362px -690px no-repeat;
+	background:transparent url(ui/bg.gif) -362px -690px no-repeat;
 	padding:45px 0 10px 0;
 	}
 
@@ -980,25 +980,25 @@ div#selected {
 
 	/* ----------------------------------- sidebar ----------------------------------- */
 div#tools {
-	background:transparent url(/ui/bg.gif) -181px -690px no-repeat;
+	background:transparent url(ui/bg.gif) -181px -690px no-repeat;
 	padding:66px 0 10px 34px;
 	margin:0;
 	}
 
 body#homesecond div#tools {
-	background:transparent url(/ui/bg.gif) -181px -690px no-repeat;
+	background:transparent url(ui/bg.gif) -181px -690px no-repeat;
 	padding:45px 0 10px 0;
 	margin:0;
 	}
 
 div#books {
-	background:transparent url(/ui/bg.gif) -450px -326px no-repeat;
+	background:transparent url(ui/bg.gif) -450px -326px no-repeat;
 	padding:45px 0 0 15px;
 	margin:0;
 	}
 
 div#ad {
-	background:transparent url(/ui/bg.gif) -543px -690px no-repeat;
+	background:transparent url(ui/bg.gif) -543px -690px no-repeat;
 	padding:66px 0 10px 10px;
 	margin:0;
 	}
@@ -1037,27 +1037,27 @@ div#tools h5#tools_reference a, div#tools h5#tools_example a, div#tools h5#tools
 	}
 
 div#tools h5#tools_reference a	{
-	background: transparent url(/ui/bg.gif) 0 -320px no-repeat;
+	background: transparent url(ui/bg.gif) 0 -320px no-repeat;
 	}
 
 div#tools h5#tools_reference a:hover	{
-	background: transparent url(/ui/bg.gif) -113px -320px no-repeat;
+	background: transparent url(ui/bg.gif) -113px -320px no-repeat;
 	}
 
 div#tools h5#tools_example a	{
-	background: transparent url(/ui/bg.gif) -0px -389px no-repeat;
+	background: transparent url(ui/bg.gif) -0px -389px no-repeat;
 	}
 
 div#tools h5#tools_example a:hover	{
-	background: transparent url(/ui/bg.gif) -113px -389px no-repeat;
+	background: transparent url(ui/bg.gif) -113px -389px no-repeat;
 	}
 
 div#tools h5#tools_quiz a	{
-	background: transparent url(/ui/bg.gif) -0px -458px no-repeat;
+	background: transparent url(ui/bg.gif) -0px -458px no-repeat;
 	}
 
 div#tools h5#tools_quiz a:hover	{
-	background: transparent url(/ui/bg.gif) -113px -458px no-repeat;
+	background: transparent url(ui/bg.gif) -113px -458px no-repeat;
 	}
 
 
