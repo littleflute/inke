@@ -1,6 +1,8 @@
+
 <html>
 <head>
 <script type="text/javascript">
+var gTimes = 0;
 function loadXMLDoc()
 {
 var xmlhttp;
@@ -16,7 +18,10 @@ xmlhttp.onreadystatechange=function()
   {
   if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
-    document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+      document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+      gTimes++;
+      document.getElementById("gTimesDiv").innerHTML=gTimes;
+      loadXMLDoc();
     }
   }
 xmlhttp.open("GET","http://api.baidao.com/api/hq/npdata.do?ids=201",true);
@@ -25,10 +30,12 @@ xmlhttp.send();
 </script>
 </head>
 <body>
-  <a href="../../">主页</a> | <a href="http://www.w3school.com.cn/tiy/t.asp?f=ajax_get" target="_blank">ref</a>
+<a href="../../">主页</a> | <a href="http://www.w3school.com.cn/tiy/t.asp?f=ajax_get" target="_blank">ref</a>
   <br>
+
 <h2>AJAX</h2>
-<button type="button" onclick="loadXMLDoc()">获取最新数据</button>
+<button type="button" onclick="loadXMLDoc()">最新数据</button>
+<div id="gTimesDiv"></div>
 <div id="myDiv"></div>
 
 </body>
