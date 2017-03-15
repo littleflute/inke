@@ -21,22 +21,36 @@ xmlhttp.onreadystatechange=function()
       document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
       gTimes++;
       document.getElementById("gTimesDiv").innerHTML=gTimes;
+      showData(xmlhttp.responseText);
       loadXMLDoc();
     }
   }
 xmlhttp.open("GET","http://api.baidao.com/api/hq/npdata.do?ids=201",true);
 xmlhttp.send();
 }
+function showData(s)
+{
+  var strData = "";
+  var s2 = s.split("{");
+  var s3 = s2[1].split("}");
+  var s4 = s3[0].split(",");
+  var i;
+  var n = 20;
+  for(i=0;i<n;i++)
+  {
+    strData += (i+1) + "-> " + s4[i] + "<br />";
+  }
+  document.getElementById("showDataDiv").innerHTML=strData;
+  
+}
 </script>
 </head>
 <body>
-<a href="../../">主页</a> | <a href="http://www.w3school.com.cn/tiy/t.asp?f=ajax_get" target="_blank">ref</a>
-  <br>
-
-<h2>AJAX</h2>
+<a href="../../">主页</a> | <a href="http://www.w3school.com.cn/tiy/t.asp?f=ajax_get" target="_blank">ref</a>->
 <button type="button" onclick="loadXMLDoc()">最新数据</button>
 <div id="gTimesDiv"></div>
 <div id="myDiv"></div>
+<div id="showDataDiv" style="border: solid 1px red;"></div>
 
 </body>
 </html>
