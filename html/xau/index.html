@@ -38,7 +38,10 @@ function showData(s)
   var n = 20;
   for(i=0;i<n;i++)
   {
-    strData += (i+1) + "-> " + s4[i] + "<br />";
+    var strTmp = s4[i];
+    if(10==i) strTmp = strTmp.fontcolor("Red");
+    if(11==i) strTmp = strTmp.fontcolor("Blue");
+    strData += (i+1) + "-> " + strTmp + "<br />";
   }
   document.getElementById("showDataDiv").innerHTML=strData;
   
