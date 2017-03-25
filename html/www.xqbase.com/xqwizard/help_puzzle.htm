@@ -1,0 +1,381 @@
+
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=gb_2312-80">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>象棋巫师求助</title>
+</head>
+
+<body bgcolor="#3869B6" topmargin="0" leftmargin="0"
+bottommargin="0" rightmargin="0">
+
+<table border="0" cellpadding="8" cellspacing="0" width="100%">
+    <tr>
+        <td>　</td>
+        <td width="750" bgcolor="#FFFFFF" nowrap><table
+        border="0" cellspacing="0" width="100%">
+            <tr>
+                <td background="../topbg.gif"><table border="0"
+                width="100%">
+                    <tr>
+                        <td valign="bottom" nowrap><table
+                        border="0">
+                            <tr>
+                                <td nowrap><img
+                                src="../wizard.jpg" width="64"
+                                height="64"><!--webbot
+                                bot="HTMLMarkup" startspan -->&nbsp;<!--webbot
+                                bot="HTMLMarkup" endspan --><font
+                                color="#FFFFFF" size="6"
+                                face="黑体">象棋巫师求助</font></td>
+                            </tr>
+                        </table>
+                        </td>
+                        <td align="right" valign="bottom"><table
+                        border="0">
+                            <tr>
+                                <td><p align="right"><font
+                                size="5">　　</font></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><p align="right"><a
+                                href="http://www.xqbase.com/"
+                                target="_blank"><img
+                                src="../xqbase.gif" border="0"
+                                width="88" height="31"></a></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><p align="right"><a
+                                href="http://www.xqbase.com/"
+                                target="_blank"><font
+                                color="#FFFFFF" size="2"
+                                face="Arial"><strong>www.xqbase.com</strong></font></a></p>
+                                </td>
+                            </tr>
+                        </table>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+            <tr>
+                <td>　</td>
+            </tr>
+        </table>
+        <table border="0" cellpadding="4" cellspacing="0"
+        width="100%" bgcolor="#F0F0F0">
+            <tr>
+                <td bgcolor="#E0E0E0"><a href="xqwizard.htm"
+                target="_blank"><font size="2"><strong>象棋巫师</strong></font></a><font
+                size="2"><strong>　</strong></font><a
+                href="xqwlight.htm" target="_blank"><font
+                size="2"><strong>手机象棋小巫师</strong></font><font
+                size="2" face="Times New Roman"><strong>(iPhone/Android)</strong></font></a></td>
+            </tr>
+            <tr>
+                <td background="../headerbg.gif"><!--webbot
+                bot="HTMLMarkup" startspan --><b><span id="lblPuzzle"></span></b><!--webbot
+                bot="HTMLMarkup" endspan --></td>
+            </tr>
+            <tr>
+                <td><div align="center"><center><table border="0"
+                cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td background="wood.jpg"><!--webbot
+                        bot="HTMLMarkup" startspan --><span id="swf"></span><!--webbot
+                        bot="HTMLMarkup" endspan --></td>
+                    </tr>
+                </table>
+                </center></div><p align="center"><font size="2"><input
+                type="button" value="　悔棋　"
+                id="btnRetract">　<input type="button"
+                value="再试一次" id="btnRestart"></font></p>
+                <p align="center"><!--webbot bot="HTMLMarkup"
+                startspan --><font size="2"><a href="#" id="lnk"></a></font><!--webbot bot="HTMLMarkup"
+                endspan --></p>
+                </td>
+            </tr>
+            <tr>
+                <td background="../headerbg.gif"><script
+                language="JavaScript"><!--
+
+function htmlEntities(s) {
+  return s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+function decodeUrl(s) {
+  try {
+    return decodeURIComponent(s.replace(/\+/g, "%20"));
+  } catch (e) {
+    return "";
+  }
+}
+
+var s = location.hash;
+if (s == "") {
+  s = location.search;
+}
+
+var puzzle;
+var i = s.indexOf("title=");
+if (i < 0) {
+  puzzle = "这道题怎么解？";
+} else {
+  var j = s.indexOf("&", i + 6);
+  if (j < 0) {
+    puzzle = s.substring(i + 6);
+  } else {
+    puzzle = s.substring(i + 6, j);
+  }
+  puzzle = decodeUrl(puzzle);
+}
+document.title = puzzle + " - 象棋巫师求助"
+lblPuzzle.innerHTML = htmlEntities(puzzle);
+
+var fen, decodedFen;
+i = s.indexOf("fen=");
+if (i < 0) {
+  fen = "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR w";
+} else {
+  var j = s.indexOf("&", i + 4);
+  if (j < 0) {
+    fen = s.substring(i + 4);
+  } else {
+    fen = s.substring(i + 4, j);
+  }
+  decodedFen = decodeUrl(fen);
+}
+
+function retract() {
+  document["XQWLight"].retract();
+}
+
+function restart() {
+  document["XQWLight"].restart(2, decodedFen);
+}
+
+btnRetract.onclick = retract;
+btnRestart.onclick = restart;
+lnk.innerHTML = htmlEntities(decodedFen);
+lnk.href = "http://www.xqbase.com/pub/fen.jsp?fen=" + fen;
+swf.innerHTML = "<object id=\"XQWLight\" classid=\"clsid:D27CDB6E-AE6D-11cf-96B8-444553540000\" " +
+    "codebase=\"http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0\" " +
+    "align=\"middle\" border=\"0\" width=\"520\" height=\"576\">" +
+    "<param name=\"wmode\" value=\"transparent\">" +
+    "<param name=\"allowScriptAccess\" value=\"always\">" +
+    "<param name=\"allowFullScreen\" value=\"false\">" +
+    "<param name=\"movie\" value=\"../xqwlight/XQWLight.swf\">" +
+    "<param name=\"quality\" value=\"high\">" +
+    "<param name=\"menu\" value=\"false\">" +
+    "<param name=\"flashvars\" value=\"mode=2&fen=" + htmlEntities(fen) + "\">" +
+    "<embed src=\"../xqwlight/XQWLight.swf\" " +
+    "align=\"middle\" border=\"0\" width=\"520\" height=\"576\" name=\"XQWLight\" quality=\"high\" allowscriptaccess=\"always\" menu=\"false\" " +
+    "flashvars=\"mode=2&fen=" + fen + "\" allowfullscreen=\"false\" wmode=\"transparent\" type=\"application/x-shockwave-flash\" " +
+    "pluginspage=\"http://www.macromedia.com/go/getflashplayer\">" +
+    "</object>";
+// --></script><a name="xqwizard"></a><font
+                size="3"><strong>关于象棋巫师</strong></font></td>
+            </tr>
+            <tr>
+                <td><dl>
+                    <dt><font color="#0000FF" size="2"><strong>　　</strong></font><a
+                        href="xqwizard.htm" target="_blank"><font
+                        color="#0000FF" size="2"><strong>象棋巫师</strong></font></a><font
+                        size="2">是一款功能超强的中国象棋教学、电脑对弈和棋谱编辑软件。</font></dt>
+                    <dt><font size="2">　　★
+                        内置上千盘杀局习题，提供存档、排名、指导等功能，帮助象棋爱好者提高棋艺，体验象棋乐趣。</font></dt>
+                    <dt><font size="2">　　★
+                        支持众多棋艺超强的象棋智能引擎，实现人机对弈和棋局分析推演。</font></dt>
+                    <dt><font size="2">　　★
+                        支持方便快捷的棋局编辑方式，支持多种棋谱格式和多种棋谱展示方式，是棋谱收藏、编辑、展示、出版的最佳选择。</font></dt>
+                    <dt><font size="2">　　★ 支持棋谱、盘面的朗读和键盘输入走棋，为视障人士提供便利。</font></dt>
+                    <dt><font size="2">　　★
+                        附带海量在线棋谱，上万</font><a
+                        href="http://www.xqbase.com/xqbase/"
+                        target="_blank"><font size="2">棋局</font></a><font
+                        size="2">、百万</font><a
+                        href="http://www.xqbase.com/xqbase/?position=rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR w - - 0 1"
+                        target="_blank"><font size="2">局面</font></a><font
+                        size="2">、亿万</font><a
+                        href="http://www.xqbase.com/xqbase/?endgame=2ba1k3/2R1a4/b8/9/9/9/9/9/9/4K4 w - - 0 1"
+                        target="_blank"><font size="2">残局</font></a><font
+                        size="2">，令专业人士叹为观止。</font></dt>
+                    <dt>　</dt>
+                    <dt><font size="2">　　</font><a
+                        href="download.jsp" target="_blank"><font
+                        size="2"><img src="../download.gif"
+                        border="0" width="130" height="36"></font></a></dt>
+                    <dt><font size="2">　　</font><a
+                        href="http://soft.hao123.com/soft/appid/1097.html"
+                        target="_blank"><font size="2">hao123下载</font></a><font
+                        size="2">　</font><a
+                        href="http://www.duote.com/soft/29258.html"
+                        target="_blank"><font size="2">2345下载</font></a><font
+                        size="2">　</font><a
+                        href="http://www.onlinedown.net/softdown/38287_2.htm"
+                        target="_blank"><font size="2">华军软件园下载</font></a><font
+                        size="2">　</font><a
+                        href="../download/xqwizard_setup.exe"><font
+                        size="2">本站下载</font></a><font
+                        size="2">　</font><a
+                        href="../download/xqwizard_portable.7z"
+                        onclick="alert(&quot;如果您在私人电脑上使用象棋巫师，强烈推荐您使用“安装版”而非“绿色版”。\n\n我们不能保证绿色版在所有的电脑上都能正常运行，敬请谅解。\n\n如果您在Windows Vista或Windows 7下首次运行象棋巫师绿色版，请用管理员身份运行。&quot;);"><font
+                        size="2">绿色版</font></a></dt>
+                    <dt>　</dt>
+                    <dt><font size="2">　　把象棋巫师推荐给好友：<!--webbot
+                        bot="HTMLMarkup" startspan --><a href="http://service.weibo.com/share/share.php?title=%23象棋巫师%23 - 功能超强的中国象棋教学、电脑对弈和棋谱编辑软件&amp;url=http://www.xqbase.com/xqwizard/xqwizard.htm&amp;pic=http://www.xqbase.com/xqwizard/screenshot_thumbnail.gif&amp;appkey=323436556" target="_blank"><img src="sina.gif" title="新浪微博" border="0"></a>
+<a href="javascript:share()"><img src="ie.gif" title="其他网站" border="0"></a>
+<script language="javascript"><!--
+  function share() {
+    if (typeof clipboardData == "undefined") {
+      alert("暂不支持在IE以外的浏览器上使用剪贴板，敬请谅解。");
+    } else {
+      clipboardData.clearData();
+      clipboardData.setData("Text", "象棋巫师 - 功能超强的中国象棋教学、电脑对弈和棋谱编辑软件 \r\nhttp://www.xqbase.com/xqwizard/xqwizard.htm");
+      alert("推荐链接已复制到剪贴板，您可以将推荐链接粘贴到任何网站、论坛、社区上(按Ctrl-V键粘贴)。\n\n感谢您对象棋巫师的支持。");
+    }
+  }
+// --></script><!--webbot
+                        bot="HTMLMarkup" endspan --></font></dt>
+                </dl>
+                </td>
+            </tr>
+            <tr>
+                <td background="../headerbg.gif"><a
+                name="xqwlight"></a><font size="3"><strong>关于象棋小巫师</strong></font></td>
+            </tr>
+            <tr>
+                <td><dl>
+                    <dt><font size="2">　　</font><font
+                        color="#0000FF" size="2"><strong>象棋小巫师</strong></font><font
+                        size="2">是一个手机象棋游戏系列，其中iPhone版和Android版都采用</font><font
+                        color="#0000FF" size="2"><strong>象棋巫师</strong></font><font
+                        size="2">引擎，与象棋巫师一样有着超群的棋艺，是手机用户感受中国象棋乐趣的最佳选择。</font></dt>
+                    <dt>　</dt>
+                    <dt><font size="2">　　★
+                        开局灵活多变，中残局也具有相当的对弈水平；</font></dt>
+                    <dt><font size="2">　　★
+                        多种难度和让子设置，可增加对弈的趣味性；</font></dt>
+                    <dt><font size="2">　　★
+                        支持一键分享，通过微博记录精彩对局，同时分享给好友；</font></dt>
+                    <dt><font size="2">　　★
+                        内置上千盘杀局习题，提供存档、指导等功能，帮助象棋爱好者提高棋艺、体验象棋乐趣。</font></dt>
+                    <dt>　</dt>
+                    <dt><font size="2">　　</font><a
+                        href="http://itunes.apple.com/cn/app/id528984912"
+                        target="_blank"><img src="iphone.gif"
+                        border="0" width="25" height="31"></a> <a
+                        href="http://itunes.apple.com/cn/app/id528984912"
+                        target="_blank"><font size="2">iTunes App
+                        Store</font></a><font size="2">
+                        免费下载 推荐给好友：<!--webbot
+                        bot="HTMLMarkup" startspan --><a href="http://service.weibo.com/share/share.php?title=%23象棋小巫师%23iPhone版：超好玩手机象棋游戏&amp;url=http://itunes.apple.com/cn/app/id528984912" target="_blank"><img src="sina.gif" title="新浪微博" border="0"></a>
+<a href="javascript:shareIphone()"><img src="ie.gif" title="其他网站" border="0"></a>
+<script language="javascript"><!--
+  function shareIphone() {
+    if (typeof clipboardData == "undefined") {
+      alert("暂不支持在IE以外的浏览器上使用剪贴板，敬请谅解。");
+    } else {
+      clipboardData.clearData();
+      clipboardData.setData("Text", "象棋小巫师iPhone版：超好玩手机象棋游戏 \r\nhttp://itunes.apple.com/cn/app/id528984912");
+      alert("推荐链接已复制到剪贴板，您可以将推荐链接粘贴到任何网站、论坛、社区上(按Ctrl-V键粘贴)。\n\n感谢您对象棋小巫师的支持。");
+    }
+  }
+// --></script><!--webbot
+                        bot="HTMLMarkup" endspan --></font></dt>
+                    <dt>　</dt>
+                    <dt><font size="2">　　</font><a
+                        href="download_xqwdroid.jsp"
+                        target="_blank"><font size="2"><img
+                        src="android.gif" border="0" width="25"
+                        height="31"></font></a><font size="2"> </font><a
+                        href="download_xqwdroid.jsp"
+                        target="_blank"><font size="2">Android
+                        应用市场</font></a><font size="2">　</font><a
+                        href="../download/com.jpcxc.xqwdroid.apk"><font
+                        size="2">本站下载</font></a><font
+                        size="2"> 推荐给好友：<!--webbot
+                        bot="HTMLMarkup" startspan --><a href="http://service.weibo.com/share/share.php?title=%23象棋小巫师%23Android版：超好玩手机象棋游戏&amp;url=http://www.xqbase.com/xqwizard/download_xqwdroid.jsp" target="_blank"><img src="sina.gif" title="新浪微博" border="0"></a>
+<a href="javascript:shareAndroid()"><img src="ie.gif" title="其他网站" border="0"></a>
+<script language="javascript"><!--
+  function shareAndroid() {
+    if (typeof clipboardData == "undefined") {
+      alert("暂不支持在IE以外的浏览器上使用剪贴板，敬请谅解。");
+    } else {
+      clipboardData.clearData();
+      clipboardData.setData("Text", "象棋小巫师Android版：超好玩手机象棋游戏 \r\nhttp://www.xqbase.com/xqwizard/download_xqwdroid.jsp");
+      alert("推荐链接已复制到剪贴板，您可以将推荐链接粘贴到任何网站、论坛、社区上(按Ctrl-V键粘贴)。\n\n感谢您对象棋小巫师的支持。");
+    }
+  }
+// --></script><!--webbot
+                        bot="HTMLMarkup" endspan --></font></dt>
+                </dl>
+                </td>
+            </tr>
+            <tr>
+                <td background="../headerbg.gif"><font size="3"><strong>咨询热线</strong></font></td>
+            </tr>
+            <tr>
+                <td><dl>
+                    <div align="left">
+                    <dt><font size="2">　　欢迎关注象棋巫师官方微博：</font><a
+                        href="http://weibo.com/xqbase"
+                        target="_blank"><font size="2"
+                        face="Times New Roman">@</font><font
+                        size="2">象棋巫师</font></a><font
+                        size="2">。</font></dt>
+                    </div><div align="left">
+                    <dt>　</dt>
+                    </div><div align="left">
+                    <dt><font size="2">　　如有任何问题、意见和建议请随时发私信或留言，或是发送邮件至：</font><a
+                        href="mailto:webmaster@xqbase.com"><font
+                        size="2" face="Times New Roman">webmaster@xqbase.com</font></a><font
+                        size="2">。</font></dt>
+                    </div>
+                </dl>
+                </td>
+            </tr>
+            <tr>
+                <td bgcolor="#E0E0E0"><table border="0"
+                cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                        <td><a href="http://weibo.com/xqbase"
+                        target="_blank"><font size="2"><img
+                        src="sina.gif" border="0" width="16"
+                        height="16"></font><font color="#000060"
+                        size="2">关注我们</font></a><font
+                        color="#000060" size="2"> </font><a
+                        href="http://www.xqbase.com/users/?cmd=suggest"
+                        target="_blank"><font color="#000060"
+                        size="2">意见反馈</font></a></td>
+                        <td><p align="right"><a
+                        href="aboutus.htm" target="_blank"><font
+                        color="#000060">&copy; </font><font
+                        color="#000060" size="2"
+                        face="Times New Roman">2013 </font><font
+                        color="#000060" size="2">上海贤趣信息技术有限公司</font></a><font
+                        color="#000060" size="2"> </font><a
+                        href="http://www.miibeian.gov.cn/"
+                        target="_blank"><font color="#000060"
+                        size="2">沪</font><font color="#000060"
+                        size="2" face="Times New Roman">ICP</font><font
+                        color="#000060" size="2">备</font><font
+                        color="#000060" size="2"
+                        face="Times New Roman">10042093</font><font
+                        color="#000060" size="2">号</font></a></p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        </td>
+        <td>　</td>
+    </tr>
+</table>
+</body>
+</html>
