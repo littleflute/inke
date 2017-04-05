@@ -3,23 +3,24 @@
 <html> 
 <body> 
 
-<button onclick="myFunction()" type="button">Change Video</button><br>
+<button onclick="myFunction1()" type="button">1</button><br>
  
-<video id="myVideo" controls autoplay>
-  <source id="mp4_src" src="https://www.w3schools.com/tags/mov_bbb.mp4" type="video/mp4"> 
+<button onclick="myFunction2()" type="button">2</button><br>
+
+<Audio id="myVideo" controls autoplay>
+  <source id="mp4_src" src="https://littleflute.github.io/blcd100/files/cd/01 Baby Workout.mp3" type="video/mp4"> 
   Your browser does not support HTML5 video.
-</video>
+</Audio>
 
 <script> 
 var vid = document.getElementById("myVideo");
 
-function myFunction() { 
-    isSupp = vid.canPlayType("video/mp4");
-    if (isSupp == "") {
-        vid.src = "movie.ogg";
-    } else {
-        vid.src = "movie.mp4";
-    }
+function myFunction1() { 
+    vid.src = "https://littleflute.github.io/blcd100/files/cd/01 Baby Workout.mp3"; 
+    vid.load();
+} 
+function myFunction2() { 
+    vid.src = "https://littleflute.github.io/blcd100/files/cd/02 Two Lovers.mp3"; 
     vid.load();
 } 
 </script> 
