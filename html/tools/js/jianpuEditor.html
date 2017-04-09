@@ -5,7 +5,7 @@
 <title>简谱编辑器</title>
 </head>
 <body>
-V0.0.5
+V0.0.6
 <br>
 <div id="jp" style="width:400;height:100px;border:solid 1px red;"></div>
 <br>
@@ -30,17 +30,22 @@ function jianpuFun()
 }
 function xdDo(jp,s)
 {
-	s=s.split(" ");
-	jp.innerHTML=s[1];
-   
-    xdAddNote(jp,s[2],140);
+    jp.innerHTML="";
+	s=s.split(" "); 
+    var l = s.length;
+    var i = 0;
+    var x = 30;
+    var w = 50;
+    for (i = 0; i < l; i++,x+=w) { 
+        xdAddNote(jp,s[i],x);
+	} 
 }
 function xdAddNote(jp,s,x)
 {
     var para = document.createElement("p");
 	var node = document.createTextNode(s);
     var sstyle = "border:2px green solid;";
-    sstyle +="width:30px;position: absolute;";
+    sstyle +="width:30px;height:20px;position: absolute;";
     sstyle +="left:"+x+"px;";
     para.style = sstyle;
 	para.appendChild(node);
