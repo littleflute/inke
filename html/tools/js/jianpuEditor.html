@@ -5,7 +5,7 @@
 <title>简谱编辑器</title>
 </head>
 <body>
-V0.0.4
+V0.0.5
 <br>
 <div id="jp" style="width:400;height:100px;border:solid 1px red;"></div>
 <br>
@@ -24,8 +24,28 @@ function jianpuFun()
 {
 	var jp = document.getElementById("jp");
     var inTxt = document.getElementById("inTxt");
-    jp.innerHTML=inTxt.value;
     
+    var s = inTxt.value;
+    xdDo(jp,s); 
+}
+function xdDo(jp,s)
+{
+	s=s.split(" ");
+	jp.innerHTML=s[1];
+   
+    xdAddNote(jp,s[2],140);
+}
+function xdAddNote(jp,s,x)
+{
+    var para = document.createElement("p");
+	var node = document.createTextNode(s);
+    var sstyle = "border:2px green solid;";
+    sstyle +="width:30px;position: absolute;";
+    sstyle +="left:"+x+"px;";
+    para.style = sstyle;
+	para.appendChild(node);
+       
+	jp.appendChild(para);
 }
 
 var canvas = document.getElementById("canvas");
