@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1 id="id1">My Heading 1</h1>
+
+<button type="button" 
+onclick="document.getElementById('id1').style.color = 'red'">
+Click Me!</button>
+
+<button type="button" onclick=btnFun("div1")>xdTest</button>
+ 
+     
+
+<div id="div1" style="width:108px;height:140px;border:1px solid;background-image: url(https://littleflute.github.io/animate-frames/img/scottpilgrim_multiple.png);background-position: 216px 140px;">test</div>
+<img src="https://littleflute.github.io/animate-frames/img/scottpilgrim_multiple.png" style="width:500px;height:140px;border:1px solid;"></img>
+<div class="scott"></div>
+
+<script>
+function btnFun(elmID)
+{
+document.getElementById(elmID).style.backgroundImage ='url(https://littleflute.github.io/animate-frames/img/ramonaflowers_multiple.png)'; 
+    document.getElementById(elmID).style.backgroundPosition = "108px 140px";  
+	document.getElementById(elmID).style.color = 'blue';
+}
+</script>
+</body>
+</html>
