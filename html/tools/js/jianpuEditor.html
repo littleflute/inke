@@ -1,20 +1,36 @@
+
 <!DOCTYPE html>
 <html>
 <head>
 <title>简谱编辑器</title>
 </head>
 <body>
-V0.0.2
+V0.0.3
+<br>
+<div id="jp" style="width:400;height:100px;border:solid 1px red;"></div>
 <br>
 <textarea rows="4" cols="50">
 At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies.
 </textarea>
 
-   <canvas id="canvas" width="400" height="400"
+<canvas id="canvas" width="140" height="140"
 style="background-color:#333">
 </canvas>
 
 <script>
+
+setInterval(jianpuFun, 1000);
+function jianpuFun()
+{
+	var jp = document.getElementById("jp");
+     var now = new Date();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    jp.innerHTML=now;
+    
+}
+
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 var radius = canvas.height / 2;
