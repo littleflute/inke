@@ -1,20 +1,40 @@
 
+
 <!DOCTYPE html>  
 <html>  
 <body>  
-V1.0.0
+V1.1.0
  <br>
+ <div id="DivCurTime"></div>
 <button onclick="getCurTime()" type="button">Get current time position</button> 
 <button onclick="plus50ms()" type="button">Time+50ms</button> 
 <button onclick="setCurTime()" type="button">Set time position to 5 seconds</button><br>  
+
+  <button onclick="play1()">1</button> 
+  <button onclick="play2()">2</button> 
+  <br><br>
+  
 <video id="myVideo" width="800" height="600" controls> 
  <source src="https://littleflute.github.io/BlISOs/files/001/021/026/A3/VTS_01_1 00_00_00-00_08_00.mp4" type="video/mp4">  
 Your browser does not support HTML5 video. 
 </video>  
 <script>  
 var vid = document.getElementById("myVideo"); 
-function getCurTime() { 
-   alert(vid.currentTime);  
+
+function play1() {   myVideo.src="https://littleflute.github.io/BlISOs/files/001/021/026/A3/VTS_01_1 00_00_00-00_08_00.mp4"; 
+    myVideo.load();
+    myVideo.play(); 
+}
+
+function play2() { 
+    myVideo.src="https://www.w3schools.com/html/mov_bbb.mp4"; 
+    myVideo.load();
+    myVideo.play(); 
+}
+
+
+function getCurTime() {  
+   document.getElementById("DivCurTime").innerHTML= vid.currentTime; 
 }   
 function setCurTime() { 
    vid.currentTime=5;  
@@ -23,4 +43,4 @@ function plus50ms() {
    vid.currentTime+=0.05;  
 }  
 </script> 
-</body>   
+</body> 
