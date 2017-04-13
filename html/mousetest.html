@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+
+<p id="myP" style="border:1px red solid;" onmousedown="mouseDown()" onmouseup="mouseUp()">
+Click the text! The mouseDown() function is triggered when the mouse button is pressed down over this paragraph, and sets the color of the text to red. The mouseUp() function is triggered when the mouse button is released, and sets the color of the text to green.
+</p>
+<div id="myDiv" style="border:1px blue solid;width:400px;height:300px;">click me!</div>
+<p id="demo"></p>
+<p id="demo1"></p>
+
+<script>
+
+var vid=document.getElementById("myDiv");
+var bDown = false;
+function mouseDownDiv(i) { 
+    vid.style.cursor = "move";
+    bDown = true;
+} 
+function mouseUpDiv(e){
+	vid.style.cursor = "help";
+    var x = e.clientX;
+    var y = e.clientY;
+    bDown = false;
+} 
+vid.addEventListener("mouseup", function(i) {
+    mouseUpDiv(i);
+});
+
+vid.addEventListener("mousedown", function(i) {
+    mouseDownDiv(i);
+});
+
+vid.addEventListener("mousemove", function(i) {
+    mouseMoveDiv(i);
+});
+
+function mouseMoveDiv(e) {
+    var x = e.clientX;
+    var y = e.clientY;
+    var coor = "Coordinates: (" + x + "," + y + ")";
+    document.getElementById("demo").innerHTML = coor;
+    var x1 = x - vid.offsetLeft;
+    var y1 = y - vid.offsetTop; 
+    var c1 = "Coordinates: (" + x1 + "," + y1 + ")";
+	document.getElementById("demo1").innerHTML = c1;
+
+	if(bDown){
+    	document.getElementById("myDiv").style.position = "absolute";
+    	document.getElementById("myDiv").style.left = x+"px";
+    	document.getElementById("myDiv").style.top = y+"px"; 
+	}
+}
+
+function mouseDown() {
+    document.getElementById("myP").style.color = "red";
+  }
+
+function mouseUp() {
+    document.getElementById("myP").style.color = "green";
+}
+</script>
+
+</body>
+</html>

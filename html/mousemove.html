@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<style>
+div {
+    width: 200px;
+    height: 100px;
+    border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+<p>This example uses the addEventListener() method to attach a "mousemove" event to a div element.</p>
+
+<div id="myDIV"></div>
+
+<p>Mouse over the rectangle above, and get the coordinates of your mouse pointer.</p>
+
+<p id="demo"></p>
+
+<p id="demo1"></p>
+
+<script>
+var vid=document.getElementById("myDIV");
+vid.addEventListener("mousemove", function(i) {
+    myFunction(i);
+});
+
+function myFunction(e) {
+    var x = e.clientX;
+    var y = e.clientY;
+    var coor = "Coordinates: (" + x + "," + y + ")";
+    document.getElementById("demo").innerHTML = coor;
+    var x1 = x - vid.offsetLeft;
+    var y1 = y - vid.offsetTop; 
+    var c1 = "Coordinates: (" + x1 + "," + y1 + ")";
+	document.getElementById("demo1").innerHTML = c1;
+}
+</script>
+
+</body>
+</html>
