@@ -1,0 +1,95 @@
+﻿
+<!DOCTYPE html> 
+<html> 
+<style>
+table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  padding: 5px;
+}
+</style>
+
+<body>
+     <a href="../../../">Home</a>-><a href="../../">docs</a>-><a href="../">cds</a>->cd03
+  <br>
+V2.6.4
+<br>
+<button onclick="play(1)" type="button">1</button>-
+<button onclick="play(2)" type="button">2</button>-
+<button onclick="play(3)" type="button">3</button>-
+<button onclick="play(4)" type="button">4</button>-
+<button onclick="play(5)" type="button">5</button>-
+<button onclick="play(6)" type="button">6</button>-
+<button onclick="play(7)" type="button">7</button>-
+<button onclick="play(8)" type="button">8</button>-
+<button onclick="play(9)" type="button">9</button>
+<br>
+<button onclick="volum(.05)" type="button">v=0.05</button>
+<button onclick="volum(.1)" type="button">v=0.1</button>
+<button onclick="volum(.2)" type="button">v=0.2</button>
+<button onclick="volum(.3)" type="button">v=0.3</button>
+<button onclick="volum(.4)" type="button">v=0.4</button>
+
+<br>
+
+<Audio id="myVideo" controls autoplay>
+  <source id="mp4_src" src="https://littleflute.github.io/c614/docs/cds/cd03/01 Waves.mp3" type="video/mp4"> 
+  Your browser does not support HTML5 video.
+</Audio>
+
+<script> 
+var vid = document.getElementById("myVideo");
+volum(.1);
+
+function play(i) {
+    var s = "";
+    if(i==1) s = "https://littleflute.github.io/c614/docs/cds/cd03/01 Waves.mp3";// + i + " Lecture 1." + i + ".mp3"; 
+    if(i==2) s = "https://littleflute.github.io/c614/docs/cds/cd03/02 Plant Food.mp3";// + i + " Lecture 1." + i + ".mp3"; 
+    vid.src = s;
+    vid.load();
+    volum(.1);
+} 
+function volum(v){
+    vid.volume = v;
+}
+</script>  
+
+<h1>The XMLHttpRequest Object test v0.1</h1>
+
+<button type="button" onclick="loadDoc()">Get my CD collection</button>
+<br><br>
+<table id="demo"></table>
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myFunction(this);
+    }
+  };
+  xhttp.open("GET", "https://www.w3schools.com/xml/cd_catalog.xml", true);
+  xhttp.send();
+}
+function myFunction(xml) {
+  var i;
+  var xmlDoc = xml.responseXML;
+  var table="<tr><th>Artist</th><th>Title</th></tr>";
+  var x = xmlDoc.getElementsByTagName("CD");
+  for (i = 0; i <x.length; i++) { 
+    table += "<tr><td>" +
+    x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+    "</td></tr>";
+  }
+  document.getElementById("demo").innerHTML = table;
+}
+</script>
+
+
+
+</body> 
+</html>

@@ -1,0 +1,107 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="xdcss.css">
+<script type="text/javascript" src="xdlib.js"></script>
+<script type="text/javascript">
+//<
+var gXdTimes = 0;
+function getData(src)
+{
+	var xmlhttp;
+	if (window.XMLHttpRequest)
+	{//"code for IE7+, Firefox, Chrome, Opera, Safari"
+		xmlhttp = new XMLHttpRequest();
+	}
+	else
+	{// code for IE6, IE5
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.onreadystatechange=function()
+	{
+		if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		{
+			showData(xmlhttp.responseText); 
+		}
+	}
+	xmlhttp.open("GET",src,true);
+	xmlhttp.send();
+}
+// --> <
+function newVer(strV)
+{
+	var b = document.getElementById("verBtn");
+	b.innerHTML = strV;
+} 
+function xdShow1(id,s)
+{
+  var strData = "";
+  var s2 = s.split("{");
+  var s3 = s2[1].split("}");
+  var s4 = s3[0].split(",");
+  var i;
+  var n = 20;
+  for(i=0;i<n;i++)
+  {
+    var strTmp = s4[i];
+    if(10==i) strTmp = strTmp.fontcolor("Red");
+    if(11==i) strTmp = strTmp.fontcolor("Blue");
+    strData += (i+1) + "-> " + strTmp + "<br />";
+  }
+  document.getElementById(id).innerHTML=strData;
+} 
+function showData(s)
+{	
+	gXdTimes++;
+	document.getElementById("gTimesDiv").innerHTML=gXdTimes;
+	xdShow1("xdshowData",s); 
+	document.getElementById("xdOriginalData").innerHTML=s;
+}
+var b2Do=false;
+
+function xd2Do() {
+	var btn = document.getElementById("xd2DoBtn");
+    if(!b2Do)
+	{	
+		btn.innerHTML = "stop";
+		btn.className = "btnRed";
+		b2Do = true;
+		runFun();
+	}
+	else
+	{
+		btn.innerHTML = "go";
+		btn.className = "btnGreen";
+		b2Do = false;
+	}
+}
+function runFun() {
+	if(b2Do){
+		getData('http://api.baidao.com/api/hq/npdata.do?ids=201'); 
+		setTimeout(function(){runFun();}, 1000);
+	}
+}
+  
+</script>
+</head>
+<body>
+<a href="../../">Home</a> | <a href="http://www.beautifullover.org" target="_blank">beautifullover.org</a>->
+<br>
+<a href="file:///D:/xd/html/tools/js/xdweb/a38.html">a38</a>
+<br>
+<button id="verBtn" type="button" onclick="getData('http://api.baidao.com/api/hq/npdata.do?ids=201')">getData</button> 
+<button id="xd2DoBtn" class = "btnGreen" type="button" onclick="xd2Do()">go</button>
+  
+ 
+<div id="gTimesDiv"></div>
+<div id="xdOriginalData"></div>
+<div id="xdshowData"></div>
+<div id="xdDivTest"></div>
+<script>
+newVer("getData v5.7.1");   
+xdDiv('xdDivTest',128,130,125,127,'black',10,150);
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+/* xdcss.css 0.1.2 2017.4.20 11:41pm bjt by LittleFlute */
+
+html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
+
+#xdOriginalData{
+	border: 1px blue solid;
+}
+
+#xdshowData{
+	border: 1px red solid;
+}
+.btnRed{
+	width:80px;height:20px;
+	border:2px red solid;
+	background-color: red;
+}
+.btnGreen{
+	width:80px;height:20px;
+	border:2px green solid;
+	background-color: green;
+}
