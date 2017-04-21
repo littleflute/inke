@@ -32,6 +32,8 @@ function newVer(strV)
 {
 	var b = document.getElementById("verBtn");
 	b.innerHTML = strV;
+	var x = location.href;
+    document.getElementById("location").innerHTML = x;
 } 
 function xdShow1(id,s)
 {
@@ -91,7 +93,7 @@ function runFun() {
 <br>
 <button id="verBtn" type="button" onclick="getData('http://api.baidao.com/api/hq/npdata.do?ids=201')">getData</button> 
 <button id="xd2DoBtn" class = "btnGreen" type="button" onclick="xd2Do()">go</button>
-  
+ <p id="location"></p>
  
 <div id="gTimesDiv"></div>
 <div id="xdOriginalData"></div>
@@ -99,7 +101,7 @@ function runFun() {
 <div id="xdDivTest" onmousemove="xdMousemove(event)" onmouseout="xdMouseout()"></div>
 <p id="demo"></p>
 <script>
-newVer("getData v5.8.1");   
+newVer("getData v5.9.1");   
 xdDiv('xdDivTest',128,130,125,127,'black',10,150);
 </script>
 
