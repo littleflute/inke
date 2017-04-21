@@ -40,3 +40,13 @@ function xdDiv(id,o,h,l,c,color,x,y)
     o.appendChild(d2);  
 
 }
+function xdMousemove(e) {
+    var x = e.clientX;
+    var y = e.clientY;
+    var coor = "Coordinates: (" + x + "," + y + ")";
+    document.getElementById("demo").innerHTML = coor;
+}
+
+function xdMouseout() {
+    document.getElementById("demo").innerHTML = "";
+}
